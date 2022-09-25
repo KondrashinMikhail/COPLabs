@@ -33,7 +33,6 @@ namespace ControlLibrary
                     TreeNode secondNode = (TreeNode)array[(int)value].Clone();
 
                     array[(int)value].Text += " ";
-
                     array[selectedNode.Index] = secondNode;
                     array[(int)value] = selectedNode;
                 }
