@@ -1,4 +1,4 @@
-﻿namespace ControlLibrary
+﻿namespace VisualControlLibrary
 {
     partial class ChoiseListControl
     {

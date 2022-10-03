@@ -1,4 +1,4 @@
-using ControlLibrary;
+using VisualControlLibrary;
 using System.Collections.Generic;
 
 namespace WinFormsApp
