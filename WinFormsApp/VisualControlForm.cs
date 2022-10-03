@@ -3,7 +3,7 @@ using System.Collections.Generic;
 
 namespace WinFormsApp
 {
-    public partial class MainForm : Form
+    public partial class VisualControlForm : Form
     {
         //Поля для списка с выблором.
         private ChoiseListControl list;
@@ -22,7 +22,7 @@ namespace WinFormsApp
             new Example { Id = 5, Name = "Сергеева", Profession = "Бухгалтер", Division = "Бухгалтерия"} };
         private readonly List<string> hierarchy = new() { "Division", "Profession", "Name" };
 
-        public MainForm() => InitializeComponent();
+        public VisualControlForm() => InitializeComponent();
 
         private void Form1_Load(object sender, EventArgs e)
         {

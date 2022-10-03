@@ -1,6 +1,6 @@
 ﻿namespace WinFormsApp
 {
-    partial class MainForm
+    partial class VisualControlForm
     {
         /// <summary>
         ///  Required designer variable.
