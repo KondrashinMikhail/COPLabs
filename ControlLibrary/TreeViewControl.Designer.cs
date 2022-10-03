@@ -1,4 +1,4 @@
-﻿namespace VisualControlLibrary
+﻿namespace ControlLibrary
 {
     partial class TreeViewControl
     {

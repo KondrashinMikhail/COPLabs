@@ -1,6 +1,6 @@
 ﻿namespace WinFormsApp
 {
-    partial class VisualControlForm
+    partial class FirstLabForm
     {
         /// <summary>
         ///  Required designer variable.

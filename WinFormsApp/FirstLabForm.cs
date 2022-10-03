@@ -1,19 +1,18 @@
 using VisualControlLibrary;
-using System.Collections.Generic;
 
 namespace WinFormsApp
 {
-    public partial class VisualControlForm : Form
+    public partial class FirstLabForm : Form
     {
         //Поля для списка с выблором.
-        private ChoiseListControl list;
+        private readonly ChoiseListControl list;
         private readonly List<string> items = new() { "Значение 1", "Значение 2", "Значение 3", "Значение 4", "Значение 5", "Значение 6" };
 
         //Поля для даты.
-        private DataTimePickerControl dataTimePicker;
+        private readonly DataTimePickerControl dataTimePicker;
 
         //Поля для дерева.
-        private TreeViewControl tree;
+        private readonly TreeViewControl tree;
         private readonly List<Example> objects = new() { new Example { Id = 1, Name = "Иванов", Profession = "Инженер", Division = "Департамент 1"},
             new Example { Id = 2, Name = "Петров", Profession = "Инженер", Division = "Департамент 1"},
             new Example { Id = 3, Name = "Сергеев", Profession = "Руководитель", Division = "Департамент 1"},
@@ -22,10 +21,10 @@ namespace WinFormsApp
             new Example { Id = 5, Name = "Сергеева", Profession = "Бухгалтер", Division = "Бухгалтерия"} };
         private readonly List<string> hierarchy = new() { "Division", "Profession", "Name" };
 
-        public VisualControlForm() => InitializeComponent();
-
-        private void Form1_Load(object sender, EventArgs e)
+        public FirstLabForm()
         {
+            InitializeComponent();
+
             //Список с выбором. Список заполняется через метод, передающий список строк.
             list = new()
             {
@@ -48,7 +47,10 @@ namespace WinFormsApp
                 Location = new Point(475, 50),
                 Size = new Size(200, 275)
             };
+        }
 
+        private void Form1_Load(object sender, EventArgs e)
+        {
             tree.RecursiveFill(tree.GetCollection(), objects);
 
             Controls.Add(list);
@@ -65,7 +67,7 @@ namespace WinFormsApp
         private void ButtonGetDate_Click(object sender, EventArgs e) => textBoxDate.Text = dataTimePicker.Date.ToString();
         //Кнопки для дерева.
         private void ButtonObject_Click(object sender, EventArgs e) => textBoxObject.Text = tree.ToStr(tree.GetSelectedObject(objects));
-        private void ButtonGetIndex_Click(object sender, EventArgs e) => textBoxGetIndex.Text = tree.index.ToString();
-        private void ButtonSetIndex_Click(object sender, EventArgs e) => tree.index = Convert.ToInt32(textBoxSetIndex.Text);
+        private void ButtonGetIndex_Click(object sender, EventArgs e) => textBoxGetIndex.Text = tree.Index.ToString();
+        private void ButtonSetIndex_Click(object sender, EventArgs e) => tree.Index = Convert.ToInt32(textBoxSetIndex.Text);
     }
 }

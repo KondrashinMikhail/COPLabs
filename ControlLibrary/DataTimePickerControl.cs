@@ -1,15 +1,7 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
-using static System.Windows.Forms.VisualStyles.VisualStyleElement;
 
-namespace VisualControlLibrary
+namespace ControlLibrary
 {
     public partial class DataTimePickerControl : UserControl
     {
@@ -49,6 +41,5 @@ namespace VisualControlLibrary
         }
 
         public void AddListener(EventHandler handler) => dateTimePicker.ValueChanged += handler;
-        
     }
 }

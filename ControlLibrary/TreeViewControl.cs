@@ -1,22 +1,16 @@
-﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
+﻿using System.Collections.Generic;
 using System.Data;
-using System.Drawing;
-using System.IO;
 using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 
-namespace VisualControlLibrary
+namespace ControlLibrary
 {
     public partial class TreeViewControl : UserControl
     {
-        public List<string> hierarchy { private get; set; }
+        public List<string> Hierarchy { private get; set; }
         private TreeNode selectedNode;
         private string path;
-        public int? index 
+        public int? Index 
         {
             get 
             {
@@ -39,17 +33,17 @@ namespace VisualControlLibrary
             }
         }
 
-        public TreeViewControl(List<string> hierarchy)
+        public TreeViewControl(List<string> Hierarchy)
         {
             InitializeComponent();
-            this.hierarchy = hierarchy;
+            this.Hierarchy = Hierarchy;
         }
 
         public void FillChildNodes<T>(TreeNode parentNode, List<T> childObjects)
         {
             foreach (var obj in childObjects)
             {
-                string text = obj.GetType().GetProperty(hierarchy.ElementAt(parentNode.Level)).GetValue(obj).ToString();
+                string text = obj.GetType().GetProperty(Hierarchy.ElementAt(parentNode.Level)).GetValue(obj).ToString();
                 bool flag = false;
 
                 for (int i = 0; i < parentNode.Nodes.Count; i++)
@@ -73,11 +67,9 @@ namespace VisualControlLibrary
         {
             if (treeView.Nodes.Count == 0)
             {
-                //FillRoot(objects);
-
                 foreach (var obj in objects)
                 {
-                    string text = obj.GetType().GetProperty(hierarchy.First()).GetValue(obj).ToString();
+                    string text = obj.GetType().GetProperty(Hierarchy.First()).GetValue(obj).ToString();
                     bool flag = false;
 
                     for (int i = 0; i < treeView.Nodes.Count; i++)
@@ -87,34 +79,32 @@ namespace VisualControlLibrary
                     if (!flag)
                     {
                         TreeNode rootNode = new TreeNode { Text = text };
-                        FillChildNodes(rootNode, objects.Where(x => x.GetType().GetProperty(hierarchy.ElementAt(0)).GetValue(obj).ToString() == text).ToList());
+                        FillChildNodes(rootNode, objects.Where(x => x.GetType().GetProperty(Hierarchy.ElementAt(0)).GetValue(obj).ToString() == text).ToList());
                         treeView.Nodes.Add(rootNode);
                     }
                 }
             }
             foreach (TreeNode node in collection)
             {
-                //AddingBefore(node, objects);
-
                 node.Nodes.Clear();
                 List<object> childObjects = new List<object>();
                 foreach (var obj in objects)
-                    if (obj.GetType().GetProperty(hierarchy.ElementAt(node.Level)).GetValue(obj).ToString() == node.Text)
+                    if (obj.GetType().GetProperty(Hierarchy.ElementAt(node.Level)).GetValue(obj).ToString() == node.Text)
                         childObjects.Add(obj);
 
-                if (childObjects.Count != 0 && node.Level + 1 < hierarchy.Count)
+                if (childObjects.Count != 0 && node.Level + 1 < Hierarchy.Count)
                 {
                     foreach (var obj in childObjects)
                     {
                         bool flag = false;
 
                         for (int i = 0; i < node.Nodes.Count; i++)
-                            if (node.Nodes[i].Text == obj.GetType().GetProperty(hierarchy.ElementAt(node.Level + 1)).GetValue(obj).ToString())
+                            if (node.Nodes[i].Text == obj.GetType().GetProperty(Hierarchy.ElementAt(node.Level + 1)).GetValue(obj).ToString())
                                 flag = true;
 
-                        if (!flag && node.Level + 1 < hierarchy.Count)
+                        if (!flag && node.Level + 1 < Hierarchy.Count)
                         {
-                            TreeNode newNode = new TreeNode { Text = obj.GetType().GetProperty(hierarchy.ElementAt(node.Level + 1)).GetValue(obj).ToString() };
+                            TreeNode newNode = new TreeNode { Text = obj.GetType().GetProperty(Hierarchy.ElementAt(node.Level + 1)).GetValue(obj).ToString() };
                             FillChildNodes(newNode, new List<object> { obj });
                             node.Nodes.Add(newNode);
                         }
@@ -127,7 +117,7 @@ namespace VisualControlLibrary
 
         public object GetSelectedObject<T>(List<T> objects) 
         {
-            string[] fields = new string[hierarchy.Count];
+            string[] fields = new string[Hierarchy.Count];
             if (path != null)
                 fields = path.Split('/');
 
@@ -135,8 +125,8 @@ namespace VisualControlLibrary
             {
                 bool flag = true;
                 if (fields != null)
-                foreach (var str in hierarchy) 
-                        if (obj.GetType().GetProperty(str).GetValue(obj).ToString() != fields[hierarchy.IndexOf(str)]) 
+                foreach (var str in Hierarchy) 
+                        if (obj.GetType().GetProperty(str).GetValue(obj).ToString() != fields[Hierarchy.IndexOf(str)]) 
                             flag = false;
                 if (flag) 
                     return obj;
@@ -147,7 +137,7 @@ namespace VisualControlLibrary
         private void TreeView_AfterSelect(object sender, TreeViewEventArgs e)
         {
             treeView.PathSeparator = "/";
-            if (e.Node.Level == hierarchy.Count - 1)
+            if (e.Node.Level == Hierarchy.Count - 1)
                 path = e.Node.FullPath;
             selectedNode = e.Node;
         }
@@ -155,7 +145,7 @@ namespace VisualControlLibrary
         public string ToStr<T>(T obj) 
         {
             string str = "";
-            foreach (var property in hierarchy) 
+            foreach (var property in Hierarchy) 
                 str += property + ": " + obj.GetType().GetProperty(property).GetValue(obj).ToString() + "; ";
             return str;
         }
