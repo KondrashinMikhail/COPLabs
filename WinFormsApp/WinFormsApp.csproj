@@ -9,7 +9,7 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\ControlLibrary\ControlLibrary.csproj" />
+    <ProjectReference Include="..\ControlLibrary\VisualControlLibrary.csproj" />
   </ItemGroup>
 
 </Project>
