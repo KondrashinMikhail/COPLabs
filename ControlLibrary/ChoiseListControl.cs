@@ -4,7 +4,7 @@ using System.Windows.Forms;
 
 namespace ControlLibrary
 {
-    public partial class ChoiseListControl: UserControl
+    public partial class ChoiseListControl : UserControl
     {
         public ChoiseListControl() => InitializeComponent();
 
