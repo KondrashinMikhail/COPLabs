@@ -10,6 +10,7 @@
 
   <ItemGroup>
     <ProjectReference Include="..\ControlLibrary\ControlLibrary.csproj" />
+    <ProjectReference Include="..\NonVisualComponentLibriary\NonVisualComponentLibriary.csproj" />
   </ItemGroup>
 
 </Project>

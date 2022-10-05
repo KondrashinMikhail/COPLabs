@@ -29,6 +29,7 @@
         private void InitializeComponent()
         {
             this.buttonFirstLab = new System.Windows.Forms.Button();
+            this.buttonSecondLab = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // buttonFirstLab
@@ -41,11 +42,22 @@
             this.buttonFirstLab.UseVisualStyleBackColor = true;
             this.buttonFirstLab.Click += new System.EventHandler(this.ButtonFirstLab_Click);
             // 
+            // buttonSecondLab
+            // 
+            this.buttonSecondLab.Location = new System.Drawing.Point(12, 74);
+            this.buttonSecondLab.Name = "buttonSecondLab";
+            this.buttonSecondLab.Size = new System.Drawing.Size(248, 56);
+            this.buttonSecondLab.TabIndex = 1;
+            this.buttonSecondLab.Text = "Second lab";
+            this.buttonSecondLab.UseVisualStyleBackColor = true;
+            this.buttonSecondLab.Click += new System.EventHandler(this.ButtonSecondLab_Click);
+            // 
             // MainForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(272, 81);
+            this.ClientSize = new System.Drawing.Size(272, 142);
+            this.Controls.Add(this.buttonSecondLab);
             this.Controls.Add(this.buttonFirstLab);
             this.Name = "MainForm";
             this.Text = "MainForm";
@@ -56,5 +68,6 @@
         #endregion
 
         private Button buttonFirstLab;
+        private Button buttonSecondLab;
     }
 }

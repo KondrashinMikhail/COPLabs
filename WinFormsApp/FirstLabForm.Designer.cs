@@ -202,7 +202,7 @@
             this.buttonSetIndex.UseVisualStyleBackColor = true;
             this.buttonSetIndex.Click += new System.EventHandler(this.ButtonSetIndex_Click);
             // 
-            // MainForm
+            // FirstLabForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
@@ -224,9 +224,9 @@
             this.Controls.Add(this.labelTreeViewControl);
             this.Controls.Add(this.labelDataTimePickerControl);
             this.Controls.Add(this.labelChoiselistControl);
-            this.Name = "MainForm";
-            this.Text = "м";
-            this.Load += new System.EventHandler(this.Form1_Load);
+            this.Name = "FirstLabForm";
+            this.Text = "FirstLabFrom";
+            this.Load += new System.EventHandler(this.FirstLabForm_Load);
             this.ResumeLayout(false);
             this.PerformLayout();
 
