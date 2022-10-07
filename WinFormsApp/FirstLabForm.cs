@@ -121,7 +121,7 @@ namespace WinFormsApp
 
         private void FirstLabForm_Load(object sender, EventArgs e)
         {
-            tree.RecursiveFill(tree.GetCollection(), objects);
+            tree.RecursiveFill(objects);
 
             Controls.Add(list);
             Controls.Add(dataTimePicker);
@@ -136,7 +136,7 @@ namespace WinFormsApp
         // нопки дл€ даты.
         private void ButtonGetDate_Click(object sender, EventArgs e) => textBoxDate.Text = dataTimePicker.Date.ToString();
         // нопки дл€ дерева.
-        private void ButtonObject_Click(object sender, EventArgs e) => textBoxObject.Text = tree.ToStr(tree.GetSelectedObject(objects));
+        private void ButtonObject_Click(object sender, EventArgs e) => textBoxObject.Text = tree.ToStr(tree.GetSelectedObject<Example>());
         private void ButtonGetIndex_Click(object sender, EventArgs e) => textBoxGetIndex.Text = tree.Index.ToString();
         private void ButtonSetIndex_Click(object sender, EventArgs e) => tree.Index = Convert.ToInt32(textBoxSetIndex.Text);
 

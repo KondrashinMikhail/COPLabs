@@ -5,8 +5,8 @@ namespace ControlLibrary
 {
     public partial class DataTimePickerControl : UserControl
     {
-        public DateTime From { get; set; }
-        public DateTime To { get; set; }
+        public DateTime? From { get; set; }
+        public DateTime? To { get; set; }
         
         public DataTimePickerControl() => InitializeComponent();
     
@@ -23,20 +23,30 @@ namespace ControlLibrary
         {
             set
             {
-                if (value > To || value < From)
-                   TextErrorValue = "Date is out of bounds";
-                else
-                    dateTimePicker.Value = (DateTime) value; 
+                if (From != null && To != null)
+                {
+                    if (value > To || value < From)
+                        TextErrorValue = "Date is out of bounds";
+                    else
+                        dateTimePicker.Value = (DateTime)value;
+                }
+                else 
+                    TextErrorValue = "'From' or 'To' are null";
             }
             get 
             {
-                if (dateTimePicker.Value > To || dateTimePicker.Value < From)
+                if (From != null && To != null)
                 {
-                    TextErrorValue = "Date is out of bounds";
-                    return null;
+                    if (dateTimePicker.Value > To || dateTimePicker.Value < From)
+                    {
+                        TextErrorValue = "Date is out of bounds";
+                        return null;
+                    }
+                    else
+                        return dateTimePicker.Value;
                 }
-                else
-                    return dateTimePicker.Value;
+                else 
+                    return null;
             }
         }
 
