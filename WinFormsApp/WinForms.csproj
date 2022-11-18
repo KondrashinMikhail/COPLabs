@@ -9,8 +9,45 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\ControlLibrary\ControlLibrary.csproj" />
+    <PackageReference Include="DocX" Version="2.3.0" />
+    <PackageReference Include="Microsoft.EntityFrameworkCore.Design" Version="6.0.7">
+      <PrivateAssets>all</PrivateAssets>
+      <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
+    </PackageReference>
+    <PackageReference Include="PDFsharp-MigraDoc-GDI" Version="1.51.5186-beta" />
+    <PackageReference Include="PDFsharp-MigraDoc-GDI" Version="1.50.5147" />
+    <PackageReference Include="PDFsharp-MigraDoc-WPF" Version="1.50.5147" />
+    <PackageReference Include="Unity" Version="5.11.10" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\ControlLibrary\VisualComponentLibrary.csproj" />
+    <ProjectReference Include="..\InternetStoreBusinessLogic\InternetStoreBusinessLogic.csproj" />
+    <ProjectReference Include="..\InternetStoreContracts\InternetStoreContracts.csproj" />
+    <ProjectReference Include="..\InternetStoreDatabaseImplement\InternetStoreDatabaseImplement.csproj" />
     <ProjectReference Include="..\NonVisualComponentLibriary\NonVisualComponentLibriary.csproj" />
+    <ProjectReference Include="..\PluginsConvention\PluginsConvention.csproj" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Reference Include="1st_lab_kop">
+      <HintPath>..\..\..\..\..\..\Personal\Университет\3 курс\Пятый семестр\КОП\COP_Chashin\1st_lab_kop.dll</HintPath>
+    </Reference>
+    <Reference Include="2nd_lab_kop">
+      <HintPath>..\..\..\..\..\..\Personal\Университет\3 курс\Пятый семестр\КОП\COP_Chashin\2nd_lab_kop.dll</HintPath>
+    </Reference>
+    <Reference Include="NonVisualComponents">
+      <HintPath>..\..\..\..\..\..\Personal\Университет\3 курс\Пятый семестр\КОП\COP_Malkova\NonVisualComponents.dll</HintPath>
+    </Reference>
+    <Reference Include="VisualComponents">
+      <HintPath>..\..\..\..\..\..\Personal\Университет\3 курс\Пятый семестр\КОП\COP_Malkova\VisualComponents.dll</HintPath>
+    </Reference>
+    <Reference Include="Xceed.Document.NET">
+      <HintPath>..\..\..\..\..\..\Personal\Университет\3 курс\Пятый семестр\КОП\Xceed\Xceed.Document.NET.dll</HintPath>
+    </Reference>
+    <Reference Include="Xceed.Words.NET">
+      <HintPath>..\..\..\..\..\..\Personal\Университет\3 курс\Пятый семестр\КОП\Xceed\Xceed.Words.NET.dll</HintPath>
+    </Reference>
   </ItemGroup>
 
 </Project>

@@ -21,10 +21,13 @@ namespace NonVisualComponentLibriary
 
             foreach (var image in images) 
             {
-                ExcelPicture pic = sheet.Drawings.AddPicture(image.Name, image);
-                pic.SetPosition(rowIndex, 0, colIndex, 0);
-                pic.SetSize(Width, Height);
-                rowIndex += 11;
+                if (image != null)
+                {
+                    ExcelPicture pic = sheet.Drawings.AddPicture(image.Name + rowIndex.ToString(), image);
+                    pic.SetPosition(rowIndex, 0, colIndex, 0);
+                    pic.SetSize(Width, Height);
+                    rowIndex += 11;
+                }
             }
 
             ExcelPkg.SaveAs(new FileInfo(destinationFullPath));

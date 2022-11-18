@@ -3,11 +3,19 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 17
 VisualStudioVersion = 17.3.32825.248
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ControlLibrary", "ControlLibrary\ControlLibrary.csproj", "{0E3E440A-35DC-40F2-9DF2-E004B6A2E380}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "VisualComponentLibrary", "ControlLibrary\VisualComponentLibrary.csproj", "{0E3E440A-35DC-40F2-9DF2-E004B6A2E380}"
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "WinForms", "WinFormsApp\WinForms.csproj", "{8DEEA220-ABE7-4C5E-B762-19363F964EF2}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "NonVisualComponentLibriary", "NonVisualComponentLibriary\NonVisualComponentLibriary.csproj", "{1E84F9BD-5FAD-4CD1-9AC5-5C165AE2D217}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "NonVisualComponentLibriary", "NonVisualComponentLibriary\NonVisualComponentLibriary.csproj", "{1E84F9BD-5FAD-4CD1-9AC5-5C165AE2D217}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "InternetStoreBusinessLogic", "InternetStoreBusinessLogic\InternetStoreBusinessLogic.csproj", "{E8DEADD4-4A59-45BE-BE9D-40B5FD07895A}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "InternetStoreContracts", "InternetStoreContracts\InternetStoreContracts.csproj", "{E127B1BE-C423-453B-874D-1C475559B4D9}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "InternetStoreDatabaseImplement", "InternetStoreDatabaseImplement\InternetStoreDatabaseImplement.csproj", "{12E42888-B24F-4BB9-998F-D6434004FBBE}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PluginsConvention", "PluginsConvention\PluginsConvention.csproj", "{1393BA4C-8B54-4F23-820A-7EF5D7C0A708}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -27,6 +35,22 @@ Global
 		{1E84F9BD-5FAD-4CD1-9AC5-5C165AE2D217}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{1E84F9BD-5FAD-4CD1-9AC5-5C165AE2D217}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{1E84F9BD-5FAD-4CD1-9AC5-5C165AE2D217}.Release|Any CPU.Build.0 = Release|Any CPU
+		{E8DEADD4-4A59-45BE-BE9D-40B5FD07895A}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{E8DEADD4-4A59-45BE-BE9D-40B5FD07895A}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{E8DEADD4-4A59-45BE-BE9D-40B5FD07895A}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{E8DEADD4-4A59-45BE-BE9D-40B5FD07895A}.Release|Any CPU.Build.0 = Release|Any CPU
+		{E127B1BE-C423-453B-874D-1C475559B4D9}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{E127B1BE-C423-453B-874D-1C475559B4D9}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{E127B1BE-C423-453B-874D-1C475559B4D9}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{E127B1BE-C423-453B-874D-1C475559B4D9}.Release|Any CPU.Build.0 = Release|Any CPU
+		{12E42888-B24F-4BB9-998F-D6434004FBBE}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{12E42888-B24F-4BB9-998F-D6434004FBBE}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{12E42888-B24F-4BB9-998F-D6434004FBBE}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{12E42888-B24F-4BB9-998F-D6434004FBBE}.Release|Any CPU.Build.0 = Release|Any CPU
+		{1393BA4C-8B54-4F23-820A-7EF5D7C0A708}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{1393BA4C-8B54-4F23-820A-7EF5D7C0A708}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{1393BA4C-8B54-4F23-820A-7EF5D7C0A708}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{1393BA4C-8B54-4F23-820A-7EF5D7C0A708}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

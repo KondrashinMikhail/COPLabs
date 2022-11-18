@@ -25,8 +25,8 @@ namespace WinForms
 
         public SecondLabForm() => InitializeComponent();
 
-        private void ButtonDocumentWithImages_Click(object sender, EventArgs e) => documentWithContext.SaveImagesToExcel("D:/Images.xlsx", "Images", new FileInfo[] { new FileInfo("D:/TrainingField.png"), new FileInfo("D:/HokageRock.jpg") });
-        private void ButtonDocumentWithTable_Click(object sender, EventArgs e) => documentWithTable.CreateTableExcel("D:/Table.xlsx", objects, mergingCells, new Dictionary<int, int>() { { 1, 100 }, { 5, 100 } }, "Table", new List<string>() { "Id", "Status", "Name", "Surname", "hasChildren", "hasCar", "Profession", "Division", "Prize" });
-        private void ButtonDocumentWithDiagrams_Click(object sender, EventArgs e) => documentWithDiagram.CreateCircleDiagrammExcel("D:/Diagram.xlsx", "Diagram", "diagram", new Dictionary<string, int>() { { "value 1", 1 }, { "value 2", 4 }, { "value 3", 2 }, { "value 4", 5 }, { "value 5", 3 } }, LegendPosition.Bottom);
+        private void ButtonDocumentWithImages_Click(object sender, EventArgs e) => documentWithContext.SaveImagesToExcel("C:/Images.xlsx", "Images", new FileInfo[] { new FileInfo("C:/Images/TrainingField.png"), new FileInfo("C:/Images/Ground.jpg") });
+        private void ButtonDocumentWithTable_Click(object sender, EventArgs e) => documentWithTable.CreateTableExcel("C:/Table.xlsx", objects, mergingCells, new Dictionary<int, int>() { { 1, 100 }, { 5, 100 } }, "Table", new List<string>() { "Id", "Status", "Name", "Surname", "hasChildren", "hasCar", "Profession", "Division", "Prize" });
+        private void ButtonDocumentWithDiagrams_Click(object sender, EventArgs e) => documentWithDiagram.CreateCircleDiagrammExcel("C:/Diagram.xlsx", "Diagram", "diagram", new Dictionary<string, int>() { { "value 1", 1 }, { "value 2", 4 }, { "value 3", 2 }, { "value 4", 5 }, { "value 5", 3 } }, LegendPosition.Bottom);
     }
 }
